@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{%block content%}
+	<h2>Bem vindo, {{user.aluno.nome}}!</h2>
+	<h3>Abaixo segue a relação de todos os alunos inscritos no sistema. Se desejar ver mais detalhes, basta clicar no nome do aluno.</h3>
+	{%for aluno in object_list%}
+		<h4><a href="{% url 'conta' pk=aluno.id %}" title="">
+		{{aluno.nome}}
+		</a></h4>
+			<ul>
+				<li>{{aluno.nome}}</li>
+				<li>{{aluno.cpf}}</li>
+			</ul>
+	{%endfor%}
+
+	<br><a class="btn btn-primary" href="{% url 'logout' %}" role="button">Logout</a>
+
+{%endblock content%}

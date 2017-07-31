@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+	Cadastro SGI
+</title>
+</head>
+</html>
+<body>
+{% extends 'core/base.html' %}
+{%load static crispy_forms_tags%}
+{%block content%}
+{% if msg %}
+	<div class="alert alert-success" role="alert">
+ 		<strong>PARABÉNS!</strong> {{msg}}
+	</div>
+{%endif%}
+
+<form enctype = "multipart/form-data" action= "" method = "post">
+	{%csrf_token%}
+	{{form | crispy}}
+	<button
+		type = "submit">Concluir
+	</button>
+</form>
+<br><br><a class="btn btn-primary" href="{% url 'home' %}" role="button">Pagina Inicial</a>
+{%endblock content%}
+
+</body>
+</html>

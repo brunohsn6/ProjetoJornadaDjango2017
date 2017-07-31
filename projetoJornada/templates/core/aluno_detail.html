@@ -1,0 +1,22 @@
+{% extends "core/base.html" %}
+
+{%block content%}
+	<h3 style="text-align-center;">Seja bem Vindo, {{object.nome}}</h3>
+	<h2>
+		
+			
+		<div ><img align = "left" src="{{MEDIA_URL}}/{{object.foto}}" width = "200" height = "200" alt = ""></div>
+		<div>	
+			Nome: {{object.nome}}<br>
+			CPF: {{object.cpf}}<br>
+			E-mail: {{object.user.email}}<br>
+			Média: {{object.media}}<br>
+			Score: {{object.score}}<br>
+		</div>
+		
+	</h2>
+	<h3><a class="btn btn-primary" href="{% url 'cadastros' %}" role="button">Voltar</a><br></h3>
+
+
+{%endblock content%}
+

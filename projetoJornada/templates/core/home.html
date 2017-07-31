@@ -1,0 +1,10 @@
+{% extends 'core/base.html' %}
+
+{%block content%}
+
+		<h3>Se você ainda não possui conta cadastrada<br><br><a class="btn btn-primary" href="{% url 'cadastro'%}" role="button">Cadastre-se</a><br></h3>
+		<h3><br>Se você já possui conta cadastrada<br><br><a class="btn btn-primary" href="{% url 'login'%}" role="button">Login</a></h3>
+
+{%endblock content%}
+
+
